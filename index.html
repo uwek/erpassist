@@ -1,14 +1,123 @@
 <!DOCTYPE html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
-  </head>
-  <body>
-    <h1>
-      This is a static template, there is no bundler or bundling involved!
-    </h1>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/tabs.css">
+    <style>
+      :root {
+  --background: rgb(248, 189, 58, .85);
+}
+h2{ position:relative; }
+h2 span{ position:absolute; top:-100px;}
+.smallfoot {
+  color: white;
+  text-align: center;
+  font-size: small;
+}
+
+.lorem::after {
+    content: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.  Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus";
+}
+    </style>
+    <script>
+      function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+p {
+  font-size: larger;
+}
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="logo">ERP-Select</h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+          <ul>
+            <li><a href="#start">Start</a></li>
+            <li><a href="#fragebogen">Fragebogen</a></li>
+            <li><a href="#ergebnisse">Ergebnisse</a></li>
+          </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span></span>
+        </label>
+      </header>
+      
+      
+      
+      
+      <div class="content">
+        <form action="mailto:uwe.kallmeyer@gmail.com" method="get" enctype="text/plain">
+        
+          <h2><span id="start"></span>Mit wenigen Klicks zur qualifizierten ERP-Anfrage</h2>
+        <center><img src="https://via.placeholder.com/350x150" /></center>
+        <p>
+          Sind Sie auf der Suche nach einem neuen ERP-System und stehen dabei noch ganz am Anfang?
+
+        </p>
+        <p>Füllen Sie einfach den Fragebogen aus und wir schlagen Ihnen einige ERP-Anbieter vor. Außerdem 
+          erhalten Sie per Email einen fertigen Vorschlag für einen Anfragetext, der alle wichtigen Angaben enthält, die ein ERP-Anbieter benötigt, um sich ein qualifiziertes Bild von Ihrem Projekt zu machen.
+        </p>
+        <p class="lorem"></p>
+
+        <h2><span id="fragebogen"></span>Ihr Projektprofil</h2>
+        <div class="tabbed">
+          <input checked="checked" id="tab1" type="radio" name="tabs" />
+          <input id="tab2" type="radio" name="tabs" />
+          <input id="tab3" type="radio" name="tabs" />
+       
+          <tabs>
+             <label for="tab1">Berlin</label>
+             <label for="tab2">London</label>
+             <label for="tab3">Paris</label>
+          </tabs>
+          
+          <figure>
+             <div class="tab1">
+              Name: <input type="text" name="name"/></p>
+              E-Mail: <input type="text" name="email"/></p>
+              Info1: <input type="text" name="subject"/></p>
+              <textarea name="comments" rows = "12" cols = "35">Senden Sie Ihre Kommentare.</textarea>
+             </div>
+             <div class="tab2"> … </div>
+             <div class="tab3"> … </div>
+          </figure>
+       </div>
+       <p class="lorem"></p>
+
+
+       <h2><span id="ergebnisse"></span>Unsere Vorschläge</h2>
+       Sobald Sie Ihr Projektprofil vollständig ausgefüllt haben, können wir Ihnen einige ERP-Anbieter vorschlagen, die Sie sich näher ansehen sollten.
+       Den vollständigen Vorlagentext für Ihre Anfrage erhalten Sie automatisch per Email.
+
+       <button onclick="myFunction()">Vorschläge anzeigen</button>
+       <div id="myDIV" style="display:none;">
+        Diese ERP-Anbieter könnten für Sie in Frage kommen:
+        <ul>
+          <li></li>
+        </ul>
+        This is my DIV element.
+      </div>
+      <p class="lorem"></p>
+
+      <input type="submit" name="submit" value="Absenden" />
+        <input type="reset" name="reset" value="Löschen" />
+    </form>
+      </div>
+      <p class="smallfoot">
+        Impressum / Kontakt / etc.
+      </p>
+
+</body>
 </html>
